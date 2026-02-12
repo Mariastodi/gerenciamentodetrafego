@@ -1,0 +1,108 @@
+:root {
+    --navy: #001f3f;       /* Azul Marinho */
+    --beige: #f5f5dc;      /* Bege */
+    --accent: #d4a373;     /* Bege Escuro / Bronze */
+    --white: #ffffff;
+    --text-light: #e0e0e0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--beige);
+    color: var(--navy);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--navy);
+    color: var(--beige);
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+nav { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 1px; }
+.logo span { color: var(--accent); }
+
+.dashboard {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 380px;
+    background-color: var(--navy);
+    color: var(--text-light);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; font-size: 0.8rem; margin-bottom: 5px; color: var(--accent); }
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #003366;
+    background: #002b56;
+    color: white;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--accent);
+    color: var(--navy);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+button:hover { background-color: var(--beige); }
+
+.math-panel {
+    background: rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+}
+
+.code-font {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--accent);
+}
+
+#map-container {
+    flex: 1;
+    position: relative;
+    background: #ddd; /* Cor de fundo caso o mapa demore */
+}
+
+#map { height: 100%; width: 100%; }
+
+.map-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: var(--navy);
+    color: var(--beige);
+    padding: 10px 20px;
+    border-radius: 30px;
+    z-index: 1000;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
