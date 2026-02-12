@@ -2,38 +2,37 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Gerenciamento de Tráfego</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TrafficSolver | Gestão de Tráfego</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Gerenciamento<span>Tráfego</span></div>
+            <div class="logo">TRAFFIC<span>SOLVER</span></div>
         </nav>
     </header>
 
     <main class="dashboard">
         <aside class="sidebar">
             <div class="search-section">
-                <h3>Roteamento Linear</h3>
+                <h3><span class="icon">📍</span> Roteamento Linear</h3>
                 <div class="input-group">
                     <label>Origem (Bairro, Cidade)</label>
-                    <input type="text" id="origem" placeholder="Ex: Centro, Fortaleza" value="Centro, Fortaleza">
+                    <input type="text" id="origem" placeholder="Ex: Morumbi, Sp" value="Morumbi, Sp">
                 </div>
                 <div class="input-group">
                     <label>Destino (Bairro, Cidade)</label>
-                    <input type="text" id="destino" placeholder="Ex: Montese, Fortaleza" value="Montese, Fortaleza">
+                    <input type="text" id="destino" placeholder="Ex: Pinheiros, Sp" value="Pinheiros, Sp">
                 </div>
                 <button id="buscar-rota">CALCULAR FLUXO (SOLVE)</button>
             </div>
 
             <div class="math-panel">
-                <h4>Painel de Variáveis (Matriz A|B)</h4>
-                <div id="matrix-status" class="code-font">Aguardando entrada de dados...</div>
+                <h4>Matriz de Decisão</h4>
+                <div id="matrix-status" class="code-font">Aguardando dados...</div>
                 <div class="formula-box">
-                    <p>Módulo do Vetor:</p>
                     <code id="formula-text">d = √((x₂-x₁)² + (y₂-y₁)²)</code>
                 </div>
             </div>
@@ -42,7 +41,7 @@
         <section id="map-container">
             <div id="map"></div>
             <div class="map-overlay">
-                Distância Euclidiana: <span id="distancia-val">0.00</span> km
+                Distância: <span id="distancia-val">0.00</span> km
             </div>
         </section>
     </main>
